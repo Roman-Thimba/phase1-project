@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Delivery Tracker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white p-6 text-center">
+    <h1 class="text-3xl font-bold">Smart Delivery Tracker</h1>
+    <p class="text-sm">Track and manage your deliveries efficiently</p>
+  </header>
+
+  <main class="container mx-auto p-6 grid md:grid-cols-3 gap-6">
+    <!-- Delivery List -->
+    <section class="md:col-span-1 space-y-4">
+      <div class="flex justify-between items-center mb-2">
+        <h2 class="text-xl font-semibold">Deliveries</h2>
+        <button id="refresh-btn" class="text-indigo-600 hover:text-indigo-800">
+          <i class="fas fa-sync-alt"></i>
+        </button>
+      </div>
+
+      <input type="text" id="search" placeholder="Search by recipient..." class="w-full p-2 border rounded" />
+
+      <div id="delivery-list" class="space-y-3">
+        <p class="text-gray-500">Loading deliveries...</p>
+      </div>
+    </section>
+
+    <!-- Delivery Detail and Forms -->
+    <section class="md:col-span-2 space-y-6">
+      <div id="delivery-detail" class="bg-white p-4 rounded shadow text-gray-500">
+        Select a delivery to view details
+      </div>
+
+      <form id="new-delivery-form" class="bg-white p-4 rounded shadow space-y-3">
+        <h3 class="text-lg font-semibold">Add New Delivery</h3>
+        <input id="recipient" required placeholder="Recipient" class="w-full p-2 border rounded" />
+        <input id="address" required placeholder="Address" class="w-full p-2 border rounded" />
+        <select id="status" class="w-full p-2 border rounded">
+          <option>Pending</option>
+          <option>Out for Delivery</option>
+          <option>Delivered</option>
+        </select>
+        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Add Delivery</button>
+      </form>
+
+      <form id="edit-delivery-form" class="hidden bg-white p-4 rounded shadow space-y-3">
+        <h3 class="text-lg font-semibold">Edit Delivery Status</h3>
+        <select id="edit-status" class="w-full p-2 border rounded">
+          <option>Pending</option>
+          <option>Out for Delivery</option>
+          <option>Delivered</option>
+        </select>
+        <div class="flex justify-end gap-2">
+          <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Update</button>
+          <button type="button" id="cancel-edit" class="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500">Cancel</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-4">
+     &copy; 2025 Smart Delivery Tracker — Follow us:
+    <a href="#" class="mx-2 text-blue-400"><i class="fab fa-facebook"></i></a>
+    <a href="#" class="mx-2 text-sky-400"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="mx-2 text-pink-400"><i class="fab fa-instagram"></i></a>
+  </footer>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
+

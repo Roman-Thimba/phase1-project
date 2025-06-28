@@ -1,0 +1,14 @@
+{
+  "deliveries": [
+    {
+      "id": 1,
+      "recipient": "Alice",
+      "status": "delivered"
+    },
+    {
+      "id": 2,
+      "recipient": "Bob",
+      "status": "pending"
+    }
+  ]
+}
